@@ -21,3 +21,6 @@ A zombie process is when you call fork() and the parent process is replicated. O
 
 **4. What are some of the benefits of working in a compiled language versus a non-compiled language? More specifically, what benefits are there to be had from taking the extra time to compile our code?**
 
+Faster performance by directly using the code on the target machine. The program was already written in native machine code.
+
+Compiled code can hide the source code from the end user because you can deploy just a binary executable file.
