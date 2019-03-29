@@ -12,7 +12,7 @@ Exit - After the process is completed the OS can move it to a terminated state w
 
 
 **2. What is a zombie process?**
-
+A zombie process is when you call fork() and the parent process is replicated. Once the child is complete there is still a process in the table where it was stored. When the parent continues the parent will delete this zombie process from the table.
 
 
 **3. How does a zombie process get created? How does one get destroyed?**
