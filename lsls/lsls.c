@@ -19,13 +19,17 @@ void listfiles(const char *path)
   // While files are avaiable lets keep reading
   while ( (ent = readdir(dir)) != NULL ) {
     stat(ent->d_name, &buf);
-    printf("%10ld ", buf.st_size );
+    if (buf.st_size = 512) {
+      printf("<DIR>");
+    } else {
+      printf("%10ld ", buf.st_size );
+    }
     printf("%s\n", ent->d_name);
-      if (buf.st_size == 512) {
-        while ( (ent = readdir(opendir((ent->d_name))) ) != NULL ) {
-          printf("%s\n", ent->d_name);
-        }
-      }
+      // if (buf.st_size == 512) {
+      //   while ( (ent = readdir(opendir((ent->d_name))) ) != NULL ) {
+      //     printf("%s\n", ent->d_name);
+      //   }
+      // }
   };
 
   // Once we're done, lets close directory
