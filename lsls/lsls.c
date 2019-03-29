@@ -19,8 +19,8 @@ void listfiles(const char *path)
   // While files are avaiable lets keep reading
   while ( (ent = readdir(dir)) != NULL ) {
     stat(ent->d_name, &buf);
-    if (buf.st_size = 512) {
-      printf("<DIR>");
+    if (stat(ent->d_name, &buf) == 0 && (S_ISREG(buf.st_mode) || S_ISDIR(buf.st_mode) )) {
+      printf("<DIR> ");
     } else {
       printf("%10ld ", buf.st_size );
     }
